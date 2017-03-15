@@ -11,7 +11,7 @@ attr_reader :bike
     @bike = bike
   end
 
-=begin This is what attr_reader does 
+=begin This is what attr_reader does - this is a getter
   def bike
     @bike
   end
