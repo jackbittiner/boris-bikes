@@ -21,8 +21,19 @@ describe DockingStation do
         expect {subject.dock(Bike.new)}.to raise_error "Docking Station Full!"
       end
     end
-  end
 
+    describe '#initialize' do
+      it 'allows the user to set a capacity instance variable' do
+        docking_station_1 = DockingStation.new(50)
+        expect(docking_station_1.capacity).to eq 50
+      end
+
+      it 'sets the capacity to default value when no arguments are given' do
+        docking_station_1 = DockingStation.new
+        expect(docking_station_1.capacity).to eq 20
+      end
+    end
+  end
   end
 
   # docking_station.dock(bike)
