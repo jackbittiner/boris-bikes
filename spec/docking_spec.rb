@@ -14,6 +14,13 @@ describe DockingStation do
     it 'raises an error when bike method called on docking station equals nil' do
       expect {subject.release_bike}.to raise_error "No bikes available"
     end
+
+    describe '#dock' do
+      it 'raises an error when a bike is attempted to dock in a docking station with 1 bike in.' do
+        subject.dock(Bike.new)
+        expect {subject.dock(Bike.new)}.to raise_error "Docking Station Full!"
+      end
+    end
   end
 
   end
